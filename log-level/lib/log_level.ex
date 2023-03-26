@@ -1,9 +1,30 @@
 defmodule LogLevel do
   def to_label(level, legacy?) do
-    # Please implement the to_label/2 function
+    log_label = %{
+      0 => %{legacy: false, log: :trace},
+      1 => %{legacy: true, log: :debug},
+      2 => %{legacy: true, log: :info},
+      3 => %{legacy: true, log: :warning},
+      4 => %{legacy: true, log: :error},
+      5 => %{legacy: false, log: :fatal}
+    }
+
+    Map.get(log_label, level)
+    |> case do
+      %{legacy: true, log: msg} -> msg
+      %{legacy: ^legacy?, log: msg} -> msg
+      _ -> :unknown
+    end
   end
 
   def alert_recipient(level, legacy?) do
-    # Please implement the alert_recipient/2 function
+    {to_label(level, legacy?), legacy?}
+    |> case do
+      {:error, _} -> :ops
+      {:fatal, _} -> :ops
+      {:unknown, true} -> :dev1
+      {:unknown, false} -> :dev2
+      _ -> false
+    end
   end
 end

@@ -13,10 +13,11 @@ defmodule KitchenCalculator do
   end
 
   def from_milliliter({:milliliter, qty}, unit) do
-    {unit, qty/@conversion[unit]}
+    {unit, qty / @conversion[unit]}
   end
 
-  def convert({unit_from, qty}, unit) do
-    nil
+  def convert(vol_pair, unit) do
+    to_milliliter(vol_pair)
+    |> from_milliliter(unit)
   end
 end

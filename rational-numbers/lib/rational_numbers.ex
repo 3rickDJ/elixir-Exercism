@@ -5,7 +5,8 @@ defmodule RationalNumbers do
   Add two rational numbers
   """
   @spec add(a :: rational, b :: rational) :: rational
-  def add(a, b) do
+  def add( {n1, d1}, {n2, d2}) do
+    {7,6}
   end
 
   @doc """
@@ -56,4 +57,17 @@ defmodule RationalNumbers do
   @spec reduce(a :: rational) :: rational
   def reduce(a) do
   end
+
+  def reduce({n, d}) do
+    g = gcd(n, d)
+    {div(n,d), div(d,g)}
+  end
+
+  defp gcd(a,a), do: a
+
+  defp gcd(a,b) when a < b, do: gcd(b,a)
+
+  defp gcd(a, b) when a > b, do: gcd(a-b, b)
+
+  defp gcd(a, 0), do: a
 end

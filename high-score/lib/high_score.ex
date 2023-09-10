@@ -5,9 +5,7 @@ defmodule HighScore do
 
   def remove_player(scores, name), do: Map.delete(scores, name)
 
-  def reset_score(scores, name) do
-    # Please implement the reset_score/2 function
-  end
+  def reset_score(scores, name), do: scores |> Map.put(name, 0)
 
   def update_score(scores, name, score) do
     # Please implement the update_score/3 function

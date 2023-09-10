@@ -6,7 +6,7 @@ defmodule RationalNumbers do
   """
   @spec add(a :: rational, b :: rational) :: rational
   def add( {n1, d1}, {n2, d2}) do
-    {7,6}
+    {n1*d2 + n2*d1, d1*d2}
   end
 
   @doc """

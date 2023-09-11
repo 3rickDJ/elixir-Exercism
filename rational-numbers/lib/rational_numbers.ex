@@ -13,7 +13,8 @@ defmodule RationalNumbers do
   Subtract two rational numbers
   """
   @spec subtract(a :: rational, b :: rational) :: rational
-  def subtract(a, b) do
+  def subtract({a1,a2}, {b1, b2}) do
+    add({a1,a2}, {-b1, b2})
   end
 
   @doc """

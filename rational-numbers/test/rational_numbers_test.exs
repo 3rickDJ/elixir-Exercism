@@ -51,7 +51,7 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.multiply({1, 2}, {2, 3}) == {1, 3}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Multiply a negative rational number by a positive rational number" do
       assert RationalNumbers.multiply({-1, 2}, {2, 3}) == {-1, 3}
     end

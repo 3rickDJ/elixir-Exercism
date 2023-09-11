@@ -60,8 +60,13 @@ defmodule RationalNumbers do
   @spec reduce(a :: rational) :: rational
   def reduce({n, d}) do
     g = gcd(Kernel.abs(n), Kernel.abs(d))
-    {div(n,g), div(d,g)}
+    {div(n,g), div(d,g)} |> fix_sign()
   end
+
+  # defp fix_sign({n,d}) when n < 0 and d < 0, do: {-n, -d}
+  defp fix_sign({n,d}) when d < 0, do: {-n, -d}
+  defp fix_sign({n,d}), do: {n,d}
+
 
   defp gcd(a,a), do: a
 

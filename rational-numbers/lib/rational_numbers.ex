@@ -37,7 +37,8 @@ defmodule RationalNumbers do
   Absolute value of a rational number
   """
   @spec abs(a :: rational) :: rational
-  def abs(a) do
+  def abs({n,d}) do
+    {Kernel.abs(n), Kernel.abs(d)} |> reduce()
   end
 
   @doc """

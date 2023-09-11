@@ -34,7 +34,7 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.subtract({1, 2}, {-2, 3}) == {7, 6}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Subtract two negative rational numbers" do
       assert RationalNumbers.subtract({-1, 2}, {-2, 3}) == {1, 6}
     end

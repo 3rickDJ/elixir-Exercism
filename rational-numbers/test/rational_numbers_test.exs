@@ -61,7 +61,7 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.multiply({-1, 2}, {-2, 3}) == {1, 3}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Multiply a rational number by its reciprocal" do
       assert RationalNumbers.multiply({1, 2}, {2, 1}) == {1, 1}
     end

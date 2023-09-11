@@ -78,7 +78,7 @@ defmodule RationalNumbersTest do
   end
 
   describe "Division" do
-    @tag :pending
+    # @tag :pending
     test "Divide two positive rational numbers" do
       assert RationalNumbers.divide_by({1, 2}, {2, 3}) == {3, 4}
     end

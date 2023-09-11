@@ -110,7 +110,7 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.abs({-1, -2}) == {1, 2}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Absolute value of a negative rational number" do
       assert RationalNumbers.abs({-1, 2}) == {1, 2}
     end

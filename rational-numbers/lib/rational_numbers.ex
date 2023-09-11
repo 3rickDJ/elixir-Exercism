@@ -21,7 +21,8 @@ defmodule RationalNumbers do
   Multiply two rational numbers
   """
   @spec multiply(a :: rational, b :: rational) :: rational
-  def multiply(a, b) do
+  def multiply({a1,a2}, {b1,b2}) do
+    {a1*b1, a2*b2} |> reduce
   end
 
   @doc """

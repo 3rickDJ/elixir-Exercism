@@ -46,7 +46,7 @@ defmodule RationalNumbersTest do
   end
 
   describe "Multiplication" do
-    @tag :pending
+    # @tag :pending
     test "Multiply two positive rational numbers" do
       assert RationalNumbers.multiply({1, 2}, {2, 3}) == {1, 3}
     end

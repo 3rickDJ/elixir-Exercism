@@ -88,7 +88,7 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.divide_by({1, 2}, {-2, 3}) == {-3, 4}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Divide two negative rational numbers" do
       assert RationalNumbers.divide_by({-1, 2}, {-2, 3}) == {3, 4}
     end

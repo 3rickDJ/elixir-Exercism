@@ -45,7 +45,8 @@ defmodule RationalNumbers do
   Exponentiation of a rational number by an integer
   """
   @spec pow_rational(a :: rational, n :: integer) :: rational
-  def pow_rational(a, n) do
+  def pow_rational({num,den}, n) do
+    {num**n, den**n} |> reduce()
   end
 
   @doc """

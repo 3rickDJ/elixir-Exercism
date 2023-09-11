@@ -6,7 +6,7 @@ defmodule RationalNumbers do
   """
   @spec add(a :: rational, b :: rational) :: rational
   def add( {n1, d1}, {n2, d2}) do
-    {n1*d2 + n2*d1, d1*d2}
+    reduce({n1*d2 + n2*d1, d1*d2})
   end
 
   @doc """
@@ -55,19 +55,16 @@ defmodule RationalNumbers do
   Reduce a rational number to its lowest terms
   """
   @spec reduce(a :: rational) :: rational
-  def reduce(a) do
-  end
-
   def reduce({n, d}) do
-    g = gcd(n, d)
-    {div(n,d), div(d,g)}
+    g = gcd(Kernel.abs(n), Kernel.abs(d))
+    {div(n,g), div(d,g)}
   end
 
   defp gcd(a,a), do: a
 
+  defp gcd(a, 0), do: a
+
   defp gcd(a,b) when a < b, do: gcd(b,a)
 
   defp gcd(a, b) when a > b, do: gcd(a-b, b)
-
-  defp gcd(a, 0), do: a
 end

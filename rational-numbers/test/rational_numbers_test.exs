@@ -120,12 +120,12 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.abs({1, -2}) == {1, 2}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Absolute value of zero" do
       assert RationalNumbers.abs({0, 1}) == {0, 1}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Absolute value of a rational number is reduced to lowest terms" do
       assert RationalNumbers.abs({2, 4}) == {1, 2}
     end

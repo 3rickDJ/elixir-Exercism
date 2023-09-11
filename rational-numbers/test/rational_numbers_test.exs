@@ -39,7 +39,7 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.subtract({-1, 2}, {-2, 3}) == {1, 6}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Subtract a rational number from itself" do
       assert RationalNumbers.subtract({1, 2}, {1, 2}) == {0, 1}
     end

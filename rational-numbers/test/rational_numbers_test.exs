@@ -142,7 +142,7 @@ defmodule RationalNumbersTest do
       assert RationalNumbers.pow_rational({-1, 2}, 3) == {-1, 8}
     end
 
-    @tag :pending
+    # @tag :pending
     test "Raise a positive rational number to a negative integer power" do
       assert RationalNumbers.pow_rational({3, 5}, -2) == {25, 9}
     end

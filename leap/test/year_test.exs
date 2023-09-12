@@ -16,7 +16,7 @@ defmodule YearTest do
     assert Year.leap_year?(1996)
   end
 
-  @tag :pending
+  # @tag :pending
   test "year divisible by 4 and 5 is still a leap year" do
     assert Year.leap_year?(1960)
   end

@@ -48,6 +48,7 @@ defmodule RationalNumbers do
   def pow_rational({num, den}, n) when n < 0 do
     {den**(-n), num**(-n)} |> reduce()
   end
+
   def pow_rational({num,den}, n) do
     {num**n, den**n} |> reduce()
   end

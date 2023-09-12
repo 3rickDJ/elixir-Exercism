@@ -10,6 +10,6 @@ defmodule Year do
   """
   @spec leap_year?(non_neg_integer) :: boolean
   def leap_year?(year) do
-    Kernel.rem(year, 4) == 0
+    Kernel.rem(year, 4) == 0 and (Kernel.rem(year,100) != 0 or Kernel.rem(year, 400)==0)
   end
 end
